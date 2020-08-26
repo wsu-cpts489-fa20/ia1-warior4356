@@ -1,0 +1,221 @@
+        /* Styling of the fixed top bar in the app */
+        .navbar {
+            overflow: hidden; /* Don't allow scrolling */
+            display: block; /* Occupies its own horizontal space */
+            background-color: #13294E;
+            position: fixed; /* Doesn't move */
+            top: 0;
+            width: 100%; /* 100% of width of screen */
+            align-content: center;
+            border-radius: 0px;
+            z-index: 100; /* Force it to be on top */
+        }
+
+        /* navbarItems defines styling of items within navbar. They should be centered top-to-bottom
+           with a small internal margin */
+        .navbarItems {
+          display: inline-flex; 
+          align-items: center; 
+          padding-top: 5px; 
+          padding-bottom: 5px;
+        }
+
+        /* sidenav -- The animated side navigation menu */
+        .sidenav {
+            height: 100%; /* Menu is full height of window */
+            width: 0; /* Menu hidden -- will be opened on click */
+            position: fixed; /* Menu stays in place regardless of other content */
+            z-index: 150; /* Force the menu to be at front */
+            top: 48px; /* Position menu 48 px from top of screen; accomodates top navbar */
+            left: 0; /* Position the menu on the left hand side */
+            background-color: #13294E; /* Background color is dark blue */
+            overflow-x: hidden; /* Don't allow horizontal scroll */
+            transition: 0.5s; /* Animation transition time is 0.5 sec */
+            padding-top: 60px; /* Place menu content 60 px from top */
+        }
+        /* applies only to an anchor tag that's a child of a sidenav element. */
+        .sidenav a {
+                padding: 16px 8px 16px 32px;
+                text-decoration: none;
+                font-size: 16px;
+                color: white;
+                display: block;
+                transition: 0.3s;
+            }
+            
+       
+        .sidenav div {
+                padding: 0px 0px 10px 6px;
+                text-decoration: none;
+                font-size: 16px;
+                color: white;
+                display: block;
+                transition: 0.3s;
+                /* border-bottom: 2px solid white; */
+            }
+         
+         /* Required ordering of link style definitions: visited, hover, active. If out of this order, they won't work!! */
+         
+         .sidenav a:visited {
+          background-color:  #13294E !important;
+          color: white !important;
+        }
+        
+        .sidenav a:active {
+          background-color:  #13294E !important;
+          color: white !important;
+        }
+        
+       
+        /* Cascading style within a style: This definition applies only to sidenavtitle class defined in an 
+           element that's a child of sidenav element. */   
+        .sidenav .sidenavtitle {
+                position: absolute;
+                width:100%;
+                top: 0px;
+                left: 0px;
+                padding: 0px 0px 0px 6px;
+                font-size: 18px;
+                margin-top: 20px;
+                margin-bottom: 20px !important;
+                border-bottom: 2px solid white;
+           }
+        
+        /* side menu button styling */
+        .menuBtn {
+            background-color:transparent; 
+            border-color:#13294E;
+        }
+
+        /* side menu button icon styling */
+        .menuBtnIcon {
+            color:white;
+            font-size:30px;
+            cursor:pointer;
+            text-align:center;
+        }
+
+        /* side menu styling when menu item selected */
+        .menuItemSelected {
+                 pointer-events: none;
+                 cursor: default;
+                 text-decoration: none;
+                 color: #13294E !important;
+                 background-color: #F0F0F0;
+         }
+         
+        /* The SpeedScore dark blue color theme  */       
+        .btncolortheme {
+                background-color: #13294E;
+                color: white;
+            }
+            
+         /* The color theme when a bottom bar menu item is selected */
+         .btnaltcolortheme {
+                background-color: #F0F0F0;
+                color: #13294E;
+            }
+
+        /* change items to gray when disabled class is applied  */
+        .disabled {
+          color: gray;
+         }
+            
+          
+        .btncolorthemeoutline {
+                border: 2px;
+                border-color: #13294E !important;
+                color: #13294E !important;
+        }
+      
+/* Styling for the divs in the app. Ensures that the content at top isn't obscured by top bar */
+   .paddedPage {
+        padding: 36px 8px 0px 8px;
+        
+    }
+    
+        
+.hide {
+    display:none;
+    }
+    
+
+.clickable-div 
+{
+        cursor: pointer;
+}
+    
+/* Styling for a navbar at the bottom of the page */
+.bottombar {
+    background-color: #13294E;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Style the links inside the bottom nav bar */
+.bottombar a {
+    display: block;
+    float: left;
+    width: 32%;
+    color: white;
+    text-align: center;
+    padding: 2px 2px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+
+/* Add a gray background color to the active link in the bottom bar */
+.bottombar a:active {
+    background-color: #F0F0F0;
+    color: #13294E;
+}
+
+/* Hide the link that should open and close the navbar on small screens */
+.bottombar .icon {
+    display: none;
+} 
+
+/* Style the icons in the bottom bar */
+.bottomBarIcon {
+    display:block; 
+    padding-top:3px;
+}
+
+/* Style the text in the bottom bar */
+.bottomBarText {
+    display:block;
+    font-size: small;
+}
+
+/* Style the floating action button, which is fixed in the lower right of the app */
+ .float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:60px;
+	right:40px;
+	background-color:#13294E;
+	color:white;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	margin-top:22px;
+}
+
+.floatBtnDiv a:visited {
+  color: white !important;
+}
+
+.floatBtnDiv a:active {
+  color: white !important;
+}
+
+body {
+    margin: 0;
+}
