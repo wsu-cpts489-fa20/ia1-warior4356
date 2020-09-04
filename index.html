@@ -1,5 +1,4 @@
 <!-- CptS 489, Spring 2020 
-     Coding Demo: W01C2
      File: index.html -- Defines the visual appearance of a demo web app with
      fixed top and bottom bars and a dynamic side menu.
 -->
@@ -33,6 +32,7 @@
     crossorigin="anonymous">
     <!-- Our local CSS stylesheet -->
     <link rel="stylesheet" href = "styles/navbar.css">
+    <link rel="stylesheet" href = "styles/modal.css">
 
 </head>
  
@@ -48,7 +48,7 @@
   <div id="navBar" class="navbar">  
     <span class="navbarItems">
       <button id="menuBtn" style="background-color: transparent;
-      border-color:#13294E; text-align: center">
+      border-color:#13294E; text-align: center" disabled>
         <span id="menuBtnIcon" class="fas fa-bars" style="color:white;
         font-size: 30px; cursor:pointer; text-align: center">
         </span>
@@ -56,7 +56,7 @@
       <img src="http://tiny.cc/sslogo" alt="Speed Score Logo" height="38px"
       width="38px">
       <span id="topBarTitle" style="color:white; font-size: 18px">
-        Activity Feed</span>
+        Welcome to SpeedScore</span>
     </span>
   </div>
   
@@ -71,27 +71,30 @@
    </div>
    <!--BEGIN MENU CONTENT-->
  <div id="mainMenuContent">
- <!--BEGIN GROUP OF MODE/ACTION BUTTONS -->
- <!--Mode buttons show current mode Action buttons are contextual; they provide
-    easy access to most important functionality in current mode 
-  -->
-  <a id= "" class=""><span class=""></span>&nbsp;Feed</a>
-  <a id= "" class=""><span class=""></span>&nbsp;Followed Users</a>
-
-   <a id= "" class=""><span class=""></span>&nbsp;All Rounds</a>
-  <a id= "" class=""><span class=""></span>&nbsp;Log New Round</a>
+  <!--BEGIN GROUP OF MODE/ACTION BUTTONS -->
+  <!--Mode buttons show current mode Action buttons are contextual; they provide
+     easy access to most important functionality in current mode 
+   -->
+   <a class="menuItem feedModeItem" hidden><span></span>&nbsp;Feed</a>
+   <a class="menuItem feedModeItem" hidden><span></span>&nbsp;Followed Users</a>
  
-  <a id= "" class="" ><span class=""></span>&nbsp;All Courses</a>
-  <a id= "" class=""><span class=""></span>&nbsp;Add a Course</a>
-   <!-- END GROUP OF MODE/ACTION BUTTONS -->
-</div>
-<!-- END MAIN MENU CONTENT -->
+   <a class="menuItem roundsModeItem" hidden><span></span>&nbsp;All Rounds</a>
+   <a class="menuItem roundsModeItem" hidden><span></span>&nbsp;Log New Round</a>
+  
+   <a class="menuItem coursesModeItem" hidden><span></span>&nbsp;All Courses</a>
+   <a class="menuItem coursesModeItem" hidden><span></span>&nbsp;Add a Course</a>
+   <a id="aboutItem" class="menuItem"><span class="fas fa-info-circle"></span>&nbsp;About</a>
+   <a id="logoutItem" class="menuItem"><span class="fas fa-sign-out-alt"></span>&nbsp;Log Out</a>
+    <!-- END GROUP OF MODE/ACTION BUTTONS -->
+ </div>
+ <!-- END MAIN MENU CONTENT -->
+ 
 </div>
 <!-- END SIDEMENU -->
 
 <!-- BEGIN FIXED BOTTOM BAR -->
-<div class="bottombar">
-<a id="feedMode" class="bottomBarBtn"><span style="display:block; padding-top:3px"
+<div class="bottombar" hidden>
+<a id="feedMode" class="bottomBarBtn menuItemSelected"><span style="display:block; padding-top:3px"
 class="nonMenuItem fas fa-th-list"></span><span style="display:block;font-size:
 small">Feed</span></a>
 <a id="roundsMode" class="bottomBarBtn"><span style="display:block; padding-top:3px"
@@ -102,11 +105,109 @@ class="nonMenuItem fas fa-flag"></span><span style="display:block;font-size:
 small">Courses</span></a> 
 </div>
 <!-- END FIXED BOTTOM BAR-->
+<!-- START MODAL DIALOG BOX DEFINITION-->
+<div id="aboutModal" class="modal" role="dialog">
+  <!-- Modal content-->
+  <div class="modal-content" style="background: #fff">
+      <div class="modal-header">
+        <center>
+          <h3 class="modal-title"><b>About SpeedScore</b>
+            <button id="modalClose" class="close"
+            style="border: 2px solid black;
+            background-color: black; color: white">
+            &times;</button>
+          </h3>
+        </center>
+      </div>
+      <div class="modal-body">
+        <center>
+        <img
+        src="https://dl.dropboxusercontent.com/s/awuwr1vpuw1lkyl/SpeedScore4SplashLogo.png"
+        height="200" width="200">
+        <h3>The World's First and Only Suite of Apps for
+        Speedgolf</h3>
+        <p style="font-style:italic">Version 5 (Live), Build
+        20.6.2018<br>
+        &copy; 2017-20 The Professor of Speedgolf. All rights
+        reserved.
+        </p>
+        </center>
+        <p>SpeedScore apps support</p>
+        <ul>
+        <li>live touranment scoring (<i>SpeedScore Live&reg;</i>)</li>
+        <li>tracking personal speedgolf rounds and sharing results
+        (<i>SpeedScore Track&reg;</i>)</li>
+        <li>finding speedgolf-friendly courses, booking tee times, and
+        paying to play speedgolf by the minute (<i>SpeedScore
+        Play&reg;</i>)</li>
+        </ul>
+        <p>SpeedScore was first developed by Dr. Chris Hundhausen,
+        associate professor of computer science at Washington State
+        University and the <i>Professor of Speedgolf</i>, with support
+        from Scott Dawley, CEO of Speedgolf USA, LLC. It leverages
+        Google server-side technologies.</p>
+        <p>For more information on SpeedScore, visit <a
+        href="http://speedscore.live" target="_blank">SpeedScore's web
+        site</a>. For more information on speedgolf, visit <a
+        href="http://playspeedgolf.com"
+        target="_blank">playspeedgolf.com</a> and <a
+        href="http://usaspeedgolf.com" target="_blank">Speedgolf
+        USA</a>.</p>
+      </div>
+      <div class="modal-footer">
+            <button id="modalOk" class="close" style="border: 2px solid
+            black; padding: 4px; background-color: black; color: white">
+            OK</button>
+      </div>
+  </div>
+</div>
+<!-- END MODAL DIALOG BOX DEFINITION-->
+
  
   <!-- BEGIN APP PAGE DEFINITIONS -->
+  <div id="loginModeDiv" class="paddedPage">
+    <center>
+      <h1></h1>
+      <form id="loginInterface">
+                 <label for="emailInput" style="padding:0px;
+                 font-size:24px">Email:
+                     <input class="form-control" type="email" 
+                     placeholder="Enter Email Address" id="emailInput"
+                     pattern="\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b"
+                     style="text-align:center;width:90%; height:10%; font-size:
+                     24px" required>
+                 </label>
+                 <p></p>
+                 <!-- Password must be 8 chars and contain at least 
+                      1 number, 1 upper, 1 lower, 1 special char-->
+                 <label for="passwordInput" style="padding:0px;
+                 font-size:24px">Password: 
+                     <input class="form-control" type="password"
+                     placeholder="Enter Password" id="passwordInput"
+                     pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+                     style="text-align:center;width:90%; height:10%; font-size:
+                     24px" required>
+                 </label>
+             <p class="bg-danger" id = "feedback" style="font-size:16px"></p>
+             <button type="submit" id="loginBtn" class="loginBtn btn btn-primary
+             btn-block btncolortheme" style="width:70%; font-size: 36px">
+               <span id="loginBtnIcon" class="fas fa-sign-in-alt"></span>
+                Log In
+                </button>
+             <br />
+             <a role="button" class="loginBtn"><img
+             src="https://drive.google.com/uc?export=view&id=1YXRuG0pCtsfvbDSTzuM2PepJdbBpjEut"></a>
+             <a role="button" class="loginBtn"><img
+             src="https://drive.google.com/uc?export=view&id=1ZoySWomjxiCnC_R4n9CZWxd_qXzY1IeL"></a>
+             
+             <p><i>Version CptS 489 Fa20</i>
+         </form>
+       </center>
+   </div>
+
  
    <!-- Activity feed page for viewing feed -->
-   <div id="activityFeedDiv"  class="paddedPage">
+   <div id="feedModeDiv"  class="paddedPage" hidden>
     <h1 align="center">Activity Feed</h1>
     <center>
     <h2>This page is under construction.</h2>
@@ -130,7 +231,7 @@ small">Courses</span></a>
     </div>
 
   <!-- Rounds page displaying the user's round history -->
-  <div id="roundsDiv" class="paddedPage" hidden>
+  <div id="roundsModeDiv" class="paddedPage" hidden>
       <h1 align="center">Rounds Page</h1>
     <center>
     <h2>This page is under construction.</h2>
@@ -154,7 +255,7 @@ small">Courses</span></a>
   </div>
 
    <!-- Page  for displaying and searching for courses -->
-   <div id="coursesDiv"  class="paddedPage" hidden>
+   <div id="coursesModeDiv"  class="paddedPage" hidden>
       <h1 align="center">Courses Page</h1>
       <center>
         <h2>This page is under construction.</h2>
@@ -179,26 +280,6 @@ small">Courses</span></a>
   <!-- END APP PAGE DEFINITIONS -->
     
   <!-- Begin SCRIPT section of document. -->
-  <script>
-  //menuBtn click: When the top-left side menu button is clicked and the menu
-  //is closed, we need to open it and toggle menu state variable.
-  document.getElementById("menuBtn").addEventListener("click",function(e) {
-    let menuWidth = document.getElementById("sideMenu").style.width;
-    if (menuWidth != "250px") {
-      //Change hamburger to X to open menu
-      document.getElementById("menuBtnIcon").classList.remove("fa-bars"); 
-      document.getElementById("menuBtnIcon").classList.add("fa-times");
-      document.getElementById("sideMenu").style.width = "250px"; //open up menu
-      //menuWidth = document.getElementById("sideMenu").style.width;
-      menuOpen = true;
-      //toggleInputDisabled(true);
-      //e.stopPropagation();
-    } else {
-      //Change X to a hamburger to close menu
-      document.getElementById("menuBtnIcon").classList.remove("fa-times"); 
-      document.getElementById("menuBtnIcon").classList.add("fa-bars");
-      document.getElementById("sideMenu").style.width = "0px"; //close up menu
-    }
-  }); 
-  </script>
+  <script src="js/eventHandlers.js"></script>
+  <script src="js/startup.js"></script>
 </html>
