@@ -75,14 +75,14 @@
   <!--Mode buttons show current mode Action buttons are contextual; they provide
      easy access to most important functionality in current mode 
    -->
-   <a id="introductionMode" class="menuItem aboutModeItem linksModeItem" hidden><span></span>&nbsp;Introduction</a>
-   <a id="linksMode" class="menuItem aboutModeItem introductionModeItem" hidden><span></span>&nbsp;My links</a>
+   <a id="introductionMode" class="menuItem aboutModeItem linksModeItem introductionModeItem" hidden><span></span>&nbsp;Introduction</a>
+   <a id="linksMode" class="menuItem aboutModeItem introductionModeItem linksModeItem" hidden><span></span>&nbsp;My links</a>
  
-   <a id="cookingMode" class="menuItem funModeItem gameModeItem" hidden><span></span>&nbsp;Cooking</a>
-   <a id="gameMode" class="menuItem funModeItem cookingModeItem" hidden><span></span>&nbsp;Video Games</a>
+   <a id="cookingMode" class="menuItem funModeItem gameModeItem cookingModeItem" hidden><span></span>&nbsp;Cooking</a>
+   <a id="gameMode" class="menuItem funModeItem cookingModeItem gameModeItem" hidden><span></span>&nbsp;Video Games</a>
   
-   <a id="educationMode" class="menuItem workModeItem jobModeItem" hidden><span></span>&nbsp;School History</a>
-   <a id="jobMode" class="menuItem workModeItem educationModeItem" hidden><span></span>&nbsp;Work Experience</a>
+   <a id="educationMode" class="menuItem workModeItem jobModeItem educationModeItem" hidden><span></span>&nbsp;School History</a>
+   <a id="jobMode" class="menuItem workModeItem educationModeItem jobModeItem" hidden><span></span>&nbsp;Work Experience</a>
    <!--<a id="aboutItem" class="menuItem"><span class="fas fa-info-circle"></span>&nbsp;About</a>-->
    <a id="logoutItem" class="menuItem"><span class="fas fa-sign-out-alt"></span>&nbsp;Log Out</a>
     <!-- END GROUP OF MODE/ACTION BUTTONS -->
@@ -94,7 +94,7 @@
 
 <!-- BEGIN FIXED BOTTOM BAR -->
 <div class="bottombar" hidden>
-<a id="aboutMode" class="bottomBarBtn menuItemSelected"><span style="display:block; padding-top:3px"
+<a id="aboutMode" class="bottomBarBtn linksModeItem menuItemSelected"><span style="display:block; padding-top:3px"
 class="nonMenuItem fas fa-user"></span><span style="display:block;font-size:
 small">About Me</span></a>
 <a id="funMode" class="bottomBarBtn"><span style="display:block; padding-top:3px"
