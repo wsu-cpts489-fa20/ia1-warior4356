@@ -2,7 +2,7 @@
         .navbar {
             overflow: hidden; /* Don't allow scrolling */
             display: block; /* Occupies its own horizontal space */
-            background-color: #13294E;
+            background-color: magenta;
             position: fixed; /* Doesn't move */
             top: 0;
             width: 100%; /* 100% of width of screen */
@@ -28,7 +28,7 @@
             z-index: 150; /* Force the menu to be at front */
             top: 48px; /* Position menu 48 px from top of screen; accomodates top navbar */
             left: 0; /* Position the menu on the left hand side */
-            background-color: #13294E; /* Background color is dark blue */
+            background-color: magenta; /* Background color is dark blue */
             overflow-x: hidden; /* Don't allow horizontal scroll */
             transition: 0.5s; /* Animation transition time is 0.5 sec */
             padding-top: 60px; /* Place menu content 60 px from top */
@@ -38,7 +38,7 @@
                 padding: 16px 8px 16px 32px;
                 text-decoration: none;
                 font-size: 16px;
-                color: white;
+                color: rgb(0, 221, 250);
                 display: block;
                 transition: 0.3s;
             }
@@ -48,22 +48,22 @@
                 padding: 0px 0px 10px 6px;
                 text-decoration: none;
                 font-size: 16px;
-                color: white;
+                color: rgb(0, 221, 250);
                 display: block;
                 transition: 0.3s;
-                /* border-bottom: 2px solid white; */
+                /* border-bottom: 2px solid yellow; */
             }
          
          /* Required ordering of link style definitions: visited, hover, active. If out of this order, they won't work!! */
          
          .sidenav a:visited {
-          background-color:  #13294E !important;
-          color: white !important;
+          background-color:  magenta !important;
+          color: yellow !important;
         }
         
         .sidenav a:active {
-          background-color:  #13294E !important;
-          color: white !important;
+          background-color:  magenta !important;
+          color: yellow !important;
         }
         
        
@@ -78,18 +78,18 @@
                 font-size: 18px;
                 margin-top: 20px;
                 margin-bottom: 20px !important;
-                border-bottom: 2px solid white;
+                border-bottom: 2px solid yellow;
            }
         
         /* side menu button styling */
         .menuBtn {
             background-color:transparent; 
-            border-color:#13294E;
+            border-color:magenta;
         }
 
         /* side menu button icon styling */
         .menuBtnIcon {
-            color:white;
+            color:yellow;
             font-size:30px;
             cursor:pointer;
             text-align:center;
@@ -100,20 +100,20 @@
                  pointer-events: none;
                  cursor: default;
                  text-decoration: none;
-                 color: #13294E !important;
-                 background-color: #F0F0F0;
+                 color: magenta !important;
+                 background-color: yellow;
          }
          
         /* The SpeedScore dark blue color theme  */       
         .btncolortheme {
-                background-color: #13294E;
-                color: white;
+                background-color: magenta;
+                color: yellow;
             }
             
          /* The color theme when a bottom bar menu item is selected */
          .btnaltcolortheme {
-                background-color: #F0F0F0;
-                color: #13294E;
+                background-color: yellowgreen;
+                color: magenta;
             }
 
         /* change items to gray when disabled class is applied  */
@@ -124,8 +124,8 @@
           
         .btncolorthemeoutline {
                 border: 2px;
-                border-color: #13294E !important;
-                color: #13294E !important;
+                border-color: magenta !important;
+                color: magenta !important;
         }
       
 /* Styling for the divs in the app. Ensures that the content at top isn't obscured by top bar */
@@ -147,7 +147,7 @@
     
 /* Styling for a navbar at the bottom of the page */
 .bottombar {
-    background-color: #13294E;
+    background-color: magenta;
     overflow: hidden;
     position: fixed;
     bottom: 0;
@@ -159,7 +159,7 @@
     display: block;
     float: left;
     width: 32%;
-    color: white;
+    color: yellow;
     text-align: center;
     padding: 2px 2px;
     text-decoration: none;
@@ -169,8 +169,8 @@
 
 /* Add a gray background color to the active link in the bottom bar */
 .bottombar a:active {
-    background-color: #F0F0F0;
-    color: #13294E;
+    background-color: yellowgreen;
+    color: magenta;
 }
 
 /* Hide the link that should open and close the navbar on small screens */
@@ -197,8 +197,8 @@
 	height:60px;
 	bottom:60px;
 	right:40px;
-	background-color:#13294E;
-	color:white;
+	background-color:magenta;
+	color:yellow;
 	border-radius:50px;
 	text-align:center;
 	box-shadow: 2px 2px 3px #999;
@@ -209,11 +209,11 @@
 }
 
 .floatBtnDiv a:visited {
-  color: white !important;
+  color: yellow !important;
 }
 
 .floatBtnDiv a:active {
-  color: white !important;
+  color: yellow !important;
 }
 
 body {

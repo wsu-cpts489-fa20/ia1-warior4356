@@ -36,10 +36,10 @@
 
 </head>
  
-<body>
+<body style="background-color: cyan">
   <!-- Begin the BODY section of the document.  -->
    <!-- Define Favicon -->
-   <link rel='shortcut icon' type='image/x-icon' href="https://dl.dropboxusercontent.com/s/79q9a1xy2148unf/SpeedScore3Icon.ico" />
+   <link rel='shortcut icon' type='image/x-icon' href="controlerIcon.png" />
     
   <!-- Fixed menu and button content goes here to define app structure: the top
        bar, the side menu, the bottom bar, and the floating contextual action
@@ -48,15 +48,15 @@
   <div id="navBar" class="navbar">  
     <span class="navbarItems">
       <button id="menuBtn" style="background-color: transparent;
-      border-color:#13294E; text-align: center" disabled>
+      border-color:magenta; text-align: center" disabled>
         <span id="menuBtnIcon" class="fas fa-bars" style="color:white;
         font-size: 30px; cursor:pointer; text-align: center">
         </span>
       </button>
-      <img src="http://tiny.cc/sslogo" alt="Speed Score Logo" height="38px"
+      <img src="controlerIcon.png" alt="Speed Score Logo" height="38px"
       width="38px">
-      <span id="topBarTitle" style="color:white; font-size: 18px">
-        Welcome to SpeedScore</span>
+      <span id="topBarTitle" style="color:cyan; font-size: 18px">
+        Welcome to my site</span>
     </span>
   </div>
   
@@ -64,26 +64,26 @@
  <!--BEGIN SIDE MENU -->
  <div id="sideMenu" class="sidenav" >
    <!--SIDE MENU TITLE -->
-  <div class="sidenavtitle">
+  <!--<div class="sidenavtitle">
       <img src='http://tiny.cc/chrisprofilepic' height='50' width='50'>
       <span id="userID" style="font-size:14px">&nbsp;Chris
       Hundhausen&nbsp;&nbsp;</span>
-   </div>
+   </div>-->
    <!--BEGIN MENU CONTENT-->
  <div id="mainMenuContent">
   <!--BEGIN GROUP OF MODE/ACTION BUTTONS -->
   <!--Mode buttons show current mode Action buttons are contextual; they provide
      easy access to most important functionality in current mode 
    -->
-   <a class="menuItem feedModeItem" hidden><span></span>&nbsp;Feed</a>
-   <a class="menuItem feedModeItem" hidden><span></span>&nbsp;Followed Users</a>
+   <a id="introductionMode" class="menuItem aboutModeItem linksModeItem" hidden><span></span>&nbsp;Introduction</a>
+   <a id="linksMode" class="menuItem aboutModeItem introductionModeItem" hidden><span></span>&nbsp;My links</a>
  
-   <a class="menuItem roundsModeItem" hidden><span></span>&nbsp;All Rounds</a>
-   <a class="menuItem roundsModeItem" hidden><span></span>&nbsp;Log New Round</a>
+   <a id="cookingMode" class="menuItem funModeItem gameModeItem" hidden><span></span>&nbsp;Cooking</a>
+   <a id="gameMode" class="menuItem funModeItem cookingModeItem" hidden><span></span>&nbsp;Video Games</a>
   
-   <a class="menuItem coursesModeItem" hidden><span></span>&nbsp;All Courses</a>
-   <a class="menuItem coursesModeItem" hidden><span></span>&nbsp;Add a Course</a>
-   <a id="aboutItem" class="menuItem"><span class="fas fa-info-circle"></span>&nbsp;About</a>
+   <a id="educationMode" class="menuItem workModeItem jobModeItem" hidden><span></span>&nbsp;School History</a>
+   <a id="jobMode" class="menuItem workModeItem educationModeItem" hidden><span></span>&nbsp;Work Experience</a>
+   <!--<a id="aboutItem" class="menuItem"><span class="fas fa-info-circle"></span>&nbsp;About</a>-->
    <a id="logoutItem" class="menuItem"><span class="fas fa-sign-out-alt"></span>&nbsp;Log Out</a>
     <!-- END GROUP OF MODE/ACTION BUTTONS -->
  </div>
@@ -94,27 +94,27 @@
 
 <!-- BEGIN FIXED BOTTOM BAR -->
 <div class="bottombar" hidden>
-<a id="feedMode" class="bottomBarBtn menuItemSelected"><span style="display:block; padding-top:3px"
-class="nonMenuItem fas fa-th-list"></span><span style="display:block;font-size:
-small">Feed</span></a>
-<a id="roundsMode" class="bottomBarBtn"><span style="display:block; padding-top:3px"
-class="nonMenuItem fas fa-history"></span><span style="display:block;font-size:
-small">Rounds</span></a>
-<a id="coursesMode" class="bottomBarBtn"><span style="display:block; padding-top:3px"
-class="nonMenuItem fas fa-flag"></span><span style="display:block;font-size:
-small">Courses</span></a> 
+<a id="aboutMode" class="bottomBarBtn menuItemSelected"><span style="display:block; padding-top:3px"
+class="nonMenuItem fas fa-user"></span><span style="display:block;font-size:
+small">About Me</span></a>
+<a id="funMode" class="bottomBarBtn"><span style="display:block; padding-top:3px"
+class="nonMenuItem fas fa-gamepad"></span><span style="display:block;font-size:
+small">What I like</span></a>
+<a id="workMode" class="bottomBarBtn"><span style="display:block; padding-top:3px"
+class="nonMenuItem fas fa-list"></span><span style="display:block;font-size:
+small">Work I do</span></a> 
 </div>
 <!-- END FIXED BOTTOM BAR-->
 <!-- START MODAL DIALOG BOX DEFINITION-->
 <div id="aboutModal" class="modal" role="dialog">
   <!-- Modal content-->
-  <div class="modal-content" style="background: #fff">
+  <div class="modal-content" style="background:cyan">
       <div class="modal-header">
         <center>
           <h3 class="modal-title"><b>About SpeedScore</b>
             <button id="modalClose" class="close"
-            style="border: 2px solid black;
-            background-color: black; color: white">
+            style="border: 2px solid magenta;
+            background-color: cyan; color: yellow">
             &times;</button>
           </h3>
         </center>
@@ -122,7 +122,7 @@ small">Courses</span></a>
       <div class="modal-body">
         <center>
         <img
-        src="https://dl.dropboxusercontent.com/s/awuwr1vpuw1lkyl/SpeedScore4SplashLogo.png"
+        src="controlerIcon.png"
         height="200" width="200">
         <h3>The World's First and Only Suite of Apps for
         Speedgolf</h3>
@@ -156,7 +156,7 @@ small">Courses</span></a>
       </div>
       <div class="modal-footer">
             <button id="modalOk" class="close" style="border: 2px solid
-            black; padding: 4px; background-color: black; color: white">
+            black; padding: 4px; background-color: yellow; color: cyan">
             OK</button>
       </div>
   </div>
@@ -175,7 +175,7 @@ small">Courses</span></a>
                      placeholder="Enter Email Address" id="emailInput"
                      pattern="\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b"
                      style="text-align:center;width:90%; height:10%; font-size:
-                     24px" required>
+                     24px" >
                  </label>
                  <p></p>
                  <!-- Password must be 8 chars and contain at least 
@@ -186,7 +186,7 @@ small">Courses</span></a>
                      placeholder="Enter Password" id="passwordInput"
                      pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
                      style="text-align:center;width:90%; height:10%; font-size:
-                     24px" required>
+                     24px" >
                  </label>
              <p class="bg-danger" id = "feedback" style="font-size:16px"></p>
              <button type="submit" id="loginBtn" class="loginBtn btn btn-primary
@@ -206,78 +206,77 @@ small">Courses</span></a>
    </div>
 
  
-   <!-- Activity feed page for viewing feed -->
-   <div id="feedModeDiv"  class="paddedPage" hidden>
-    <h1 align="center">Activity Feed</h1>
+  <div id="aboutModeDiv"  class="paddedPage" hidden>
+    <h1 align="center">About Me</h1>
     <center>
-    <h2>This page is under construction.</h2>
-    <img src="https://dl.dropboxusercontent.com/s/qpjhy9x9gwdxpob/SpeedScoreLogo64Trans.png" height="200" width="200">
-    <p style="font-style:italic">Version CptS 489 Demo<br>
-       &copy; 2017-19 The Professor of Speedgolf. All rights reserved.
-    </p>
+    <h2>These pages tells you about me. If I was interesting. Which I am not.</h2>
+    <img src="controlerIcon.png" height="200" width="200">
     </center>
   </div>
 
-   <!-- Edit followed users page -->
-   <div id="followedUsersDiv"  class="paddedPage" hidden>
-      <h1 align="center">Edit Followed Users</h1>
-      <center>
-    <h2>This page is under construction.</h2>
-    <img src="https://dl.dropboxusercontent.com/s/qpjhy9x9gwdxpob/SpeedScoreLogo64Trans.png" height="200" width="200">
-    <p style="font-style:italic">Version CptS 489 Demo<br>
-       &copy; 2017-19 The Professor of Speedgolf. All rights reserved.
-    </p>
-    </center>
-    </div>
-
-  <!-- Rounds page displaying the user's round history -->
-  <div id="roundsModeDiv" class="paddedPage" hidden>
-      <h1 align="center">Rounds Page</h1>
+  <div id="introductionModeDiv"  class="paddedPage" hidden>
+    <h1 align="center">Introduction</h1>
     <center>
-    <h2>This page is under construction.</h2>
-    <img src="https://dl.dropboxusercontent.com/s/qpjhy9x9gwdxpob/SpeedScoreLogo64Trans.png" height="200" width="200">
-    <p style="font-style:italic">Version CptS 489 Demo<br>
-       &copy; 2017-19 The Professor of Speedgolf. All rights reserved.
-    </p>
+    <h2>This page would have a short introduction about me.</h2>
+    <img src="controlerIcon.png" height="200" width="200">
     </center>
   </div>
 
-  <!-- Page for logging a new round -->
-  <div id="logRoundDiv" class="paddedPage" hidden>
-      <h1 align="center">Log Round Page</h1>
-      <center>
-        <h2>This page is under construction.</h2>
-        <img src="https://dl.dropboxusercontent.com/s/qpjhy9x9gwdxpob/SpeedScoreLogo64Trans.png" height="200" width="200">
-        <p style="font-style:italic">Version CptS 489 Demo<br>
-           &copy; 2017-19 The Professor of Speedgolf. All rights reserved.
-        </p>
-        </center>
+  <div id="linksModeDiv"  class="paddedPage" hidden>
+    <h1 align="center">Media Links</h1>
+    <center>
+  <h2>This would have links to my social media, if I had any. I don't like my information being on the internet.</h2>
+  <img src="controlerIcon.png" height="200" width="200">
+  </center>
   </div>
 
-   <!-- Page  for displaying and searching for courses -->
-   <div id="coursesModeDiv"  class="paddedPage" hidden>
-      <h1 align="center">Courses Page</h1>
-      <center>
-        <h2>This page is under construction.</h2>
-        <img src="https://dl.dropboxusercontent.com/s/qpjhy9x9gwdxpob/SpeedScoreLogo64Trans.png" height="200" width="200">
-        <p style="font-style:italic">Version CptS 489 Demo<br>
-           &copy; 2017-19 The Professor of Speedgolf. All rights reserved.
-        </p>
-        </center>
-   </div>
+  <div id="funModeDiv" class="paddedPage" hidden>
+      <h1 align="center">What I like</h1>
+    <center>
+    <h2>These pages are about what I find fun.</h2>
+    <img src="controlerIcon.png" height="200" width="200">
+    </center>
+  </div>
 
-    <!-- Page  for displaying and searching for courses -->
-    <div id="searchCourseDiv"  class="paddedPage" hidden>
-        <h1 align="center">Search for Course Page</h1>
-        <center>
-          <h2>This page is under construction.</h2>
-          <img src="https://dl.dropboxusercontent.com/s/qpjhy9x9gwdxpob/SpeedScoreLogo64Trans.png" height="200" width="200">
-          <p style="font-style:italic">Version CptS 489 Demo<br>
-             &copy; 2017-19 The Professor of Speedgolf. All rights reserved.
-          </p>
-          </center>
-     </div>
-  <!-- END APP PAGE DEFINITIONS -->
+  <div id="gameModeDiv" class="paddedPage" hidden>
+    <h1 align="center">Video Games</h1>
+    <center>
+      <h2>This page would have video games I like. There are far too many.</h2>
+      <img src="controlerIcon.png" height="200" width="200">
+    </center>
+  </div>  
+
+  <div id="cookingModeDiv" class="paddedPage" hidden>
+    <h1 align="center">Cooking</h1>
+    <center>
+      <h2>This page would have things I have cooked. Alas, I ate them all.</h2>
+      <img src="controlerIcon.png" height="200" width="200">
+    </center>
+  </div>
+
+  <div id="workModeDiv"  class="paddedPage" hidden>
+    <h1 align="center">Work I do</h1>
+    <center>
+      <h2>These pages are about things I didn't find fun, but did anyway.</h2>
+      <img src="controlerIcon.png" height="200" width="200">
+      </center>
+  </div>
+
+  <div id="jobModeDiv"  class="paddedPage" hidden>
+    <h1 align="center">Jobs I've Had</h1>
+    <center>
+      <h2>This page would have the jobs I've had. It is a low number.</h2>
+      <img src="controlerIcon.png" height="200" width="200">
+      </center>
+  </div>
+
+  <div id="educationModeDiv"  class="paddedPage" hidden>
+    <h1 align="center">Education History</h1>
+    <center>
+      <h2>This page would have my education history. I don't need no edumacation.</h2>
+      <img src="controlerIcon.png" height="200" width="200">
+      </center>
+  </div>
     
   <!-- Begin SCRIPT section of document. -->
   <script src="js/eventHandlers.js"></script>
