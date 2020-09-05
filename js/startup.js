@@ -2,7 +2,7 @@
 //Define global vars and function bindings
 //Set up UI state
 var menuOpen = false; //Boolean variable to capture the state of the side menu.
-var mode = "feedMode"; //Variable captures current UI mode
+var mode = "aboutMode"; //Variable captures current UI mode
 
 //Associative array maps modes to page titles
 var modeToTitle = {"aboutMode": "About Mode",
